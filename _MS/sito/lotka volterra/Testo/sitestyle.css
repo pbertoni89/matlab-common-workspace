@@ -1,0 +1,151 @@
+ol, ul, p, td {
+font-family: verdana,helvetica,arial;
+font-size: 10pt;
+}
+p.code {
+color: #0000FF;
+font-family: "courier new", courier, monospace;
+font-size: 10pt;
+}
+table.newsborder {
+font-family: verdana,helvetica,arial;
+font-size: 12pt;
+}
+table.headedboxborder {
+font-family: verdana,helvetica,arial;
+font-size: 12pt;
+}
+p.newsbody {
+font-family: verdana,helvetica,arial;
+font-size: 10pt;
+}
+p.counter {
+color: #555555;
+font-family: lucida,verdana,helvetica,arial,sans-serif;
+font-size: 8pt;
+font-weight: normal;
+}
+H1 {
+font-family: arial,verdana,helvetica;
+font-size: 20pt;
+}
+H2 {
+font-family: arial,verdana,helvetica;
+font-size: 16pt;
+}
+H3 {
+font-family: arial,verdana,helvetica;
+font-size: 14pt;
+}
+H4 {
+font-family: arial,verdana,helvetica;
+font-size: 12pt;
+}
+A {
+text-decoration: none;
+}
+A:link {
+color: #339900;
+font-weight: bold;
+}
+A:visited {
+color: #33CC00;
+font-weight: bold;
+}
+A:active {
+color: #333399;
+font-weight: bold;
+}
+A:hover {
+text-decoration: underline;
+color: #339933;
+font-weight: bold;
+}
+BODY {
+background-color: #ffffff;
+background-image: url("images/bg.jpg");
+}
+pre {
+font-family: "courier new", courier, monospace;
+}
+pre.code {
+color: #0000FF;
+}
+pre.newsheaders {
+color: #006000;
+}
+pre.newsmessage {
+color: #400000;
+}
+pre.newsquote1 {
+color: #000060;
+}
+pre.newsquote2 {
+color: #900000;
+}
+.general {
+font-family: verdana,helvetica,arial;
+font-size: 10pt;
+}
+.intro {
+font-family: verdana,helvetica,arial;
+font-size: 10pt;
+}
+td.newsdate {
+font-family: verdana,helvetica,arial;
+font-weight: bold;
+font-size: 12pt;
+background-color: #666666;
+}
+td.newstitle {
+font-family: verdana,helvetica,arial;
+font-weight: bold;
+font-size: 12pt;
+}
+td.headedboxtitle {
+font-family: verdana,helvetica,arial;
+font-weight: normal;
+font-size: 12pt;
+}
+td.newsitem {
+}
+td.linkgrouptitle {
+font-family: verdana,helvetica,arial;
+font-weight: bold;
+font-size: 12pt;
+background-color: #66bbdd;
+}
+td.linkgroupbody {
+background-color: #9bd7ef;
+}
+td.linkdescurl {
+font-family: verdana,helvetica,arial;
+font-size: 10pt;
+background-color: #bddfef;
+}
+td.linkdescbody {
+font-family: verdana,helvetica,arial;
+font-size: 10pt;
+background-color: #bddfef;
+}
+td.menuitem {
+background-color: eeeeee;
+font-family: verdana,helvetica,arial;
+font-size: 10pt;
+}
+td.menuitemsel {
+background-color: eeeeee;
+font-family: verdana,helvetica,arial;
+font-size: 10pt;
+}
+td.menuheader {
+font-family: verdana,helvetica,arial;
+font-weight: bold;
+font-size: 12pt;
+background-color: fffff;
+}
+td.searchform {
+font-family: verdana,helvetica,arial;
+font-weight: normal;
+font-size: 10pt;
+}

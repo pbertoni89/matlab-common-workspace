@@ -1,0 +1,70 @@
+Segnali fondamentali:
+
+Di Energia:   Rettangolo			     A=1	w=1		//Base 1 Ampiezza 1
+
+              Triangolo				     A=1	W=2/3		//Base 2 Ampiezza 1
+
+	      Sen_c=sin(pi*t)/(pi*t)                 A=1 	W=1		
+
+	      Impulso gaussiano	                     A=1
+		
+
+Di Potenza:   Segno				     P=1
+
+	      Gradino				     P=1/2
+
+	      Sinusoide=Asin(2*pi*f0*t+fase(fi))     P=A^2/2
+
+
+
+
+Proprietà segnale energia: Se ho y(t)=versione scalata x(t) cioè y(t)=x(at) l'energia Wy è Wy= 1/abs(a) * Wx
+Energia della somma x(t)+y(t) != da Wx+Wy
+
+
+Riflessioni//   Y(-t) riflessione rispetto asse y -Y(t) riflessione rispetto asse x
+
+
+Calcoli:
+
+Area di un segnale è integrale su tutto R.
+
+Energia di un segnale è integrale su tutto R del quadrato del modulo del segnale.
+
+Potenza di un segnale è intergale tutto R del quadrato del modulo del segnale ma tutto diviso per il supporto T
+
+
+
+----   Scomposizione parte pari è (x(t)+x(-t))/2
+
+----   Scomposizione parte dispari è (x(t)-x(-t))/2
+
+
+Convoluzione:
+
+Uso un ciclo indice k dove dentro definito z(k) dove z(k)=integrale( x.*y , dtau );
+
+
+Sistemi:
+
+		Linearità		S[a*x1(t)+b*x2t)]=a*S[x1(t)]+b*S[x2(t)]     
+					Se x(t)=0 e y(t)=0 ==> non concludo nulla
+					se x(t)=0 e y(t)!=0 ==> sistema sicuramente non lineare 
+
+	
+		Tempo invarianza	Sia x=x1(t) e x2=x1(t-t0)    y1=S[x1]  y2=S[x2] se y1(t-t0)=y2 allora è TEMPO INVARIANTE
+
+
+		Memoria			Un sistema è SENZA MEMORIA quando y(t') dipende solo dallo stesso istante t' e si dice anche che è ISTANTANEO
+				   	
+					Un sistema senza memoria ==> è CAUSALE  			
+
+
+		Causalità               S[] è CAUSALE quando l'uscita in t dipende da x(t) in istanti <=t, 
+					ANTIcausale per istanti >t 
+					NON causale entrambe
+
+
+		Stabilità		BIBO:: dato un ingresso limitato x(t) se y(t) limitato allora stabile
+
+					abs(x(t))<M ==> esiste N: abs(y(t))<N 

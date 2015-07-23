@@ -1,0 +1,1611 @@
+Model {
+  Name			  "pid"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "50"
+  SolverMode		  "Auto"
+  Solver		  "ode23"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-3"
+  Refine		  "1"
+  MaxStep		  "10"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Thu Apr 13 14:11:34 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Apr 13 14:11:40 2000"
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "pid"
+    Location		    [6, 74, 785, 408]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Sum
+      Name		      " somma "
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [525, 175, 545, 210]
+      Orientation	      "left"
+      ShowName		      off
+      FontSize		      11
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PID Controller"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [210, 109, 285, 141]
+      ForegroundColor	      "magenta"
+      ShowName		      off
+      OpenFcn		      "blocca"
+      ShowPortLabels	      off
+      MaskHelp		      "This block implements a PID controller where pa"
+"rameters are entered for the Proportional, Integral and Derivative terms. Unm"
+"ask this block to see how it works. The derivative term is implemented using "
+"a true derivative block."
+      MaskDisplay	      "disp('PID')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"PID Controller"
+	Location		[4, 42, 366, 286]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "In_1"
+	  Position		  [25, 65, 45, 85]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "D"
+	  Position		  [95, 129, 115, 151]
+	  Gain			  "D"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Derivative
+	  Name			  "Derivative"
+	  Position		  [150, 128, 190, 152]
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Integral"
+	  Position		  [110, 57, 145, 93]
+	  Numerator		  "[I]"
+	  Denominator		  "[1 0]"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Proportional"
+	  Position		  [120, 13, 140, 37]
+	  Gain			  "K"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [3, 1, 0, 0, 0]
+	  Position		  [245, 57, 265, 93]
+	  IconShape		  "rectangular"
+	  Inputs		  "+++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out_1"
+	  Position		  [290, 65, 310, 85]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "D"
+	  SrcPort		  1
+	  DstBlock		  "Derivative"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In_1"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, 65]
+	    DstBlock		    "D"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [15, 0]
+	    Branch {
+	      DstBlock		      "Integral"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, -50]
+	      DstBlock		      "Proportional"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Derivative"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -55]
+	  DstBlock		  "Sum"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Integral"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Proportional"
+	  SrcPort		  1
+	  Points		  [65, 0; 0, 40]
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "anello aperto"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [570, 235, 705, 285]
+      DropShadow	      on
+      ShowName		      off
+      ShowPortLabels	      off
+      MaskDisplay	      "disp('analisi\\n in anello aperto')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"anello aperto"
+	Location		[55, 193, 486, 278]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Diagrammi"
+	  Ports			  [0, 0, 0, 0, 0]
+	  Position		  [55, 25, 170, 72]
+	  ShowName		  off
+	  ShowPortLabels	  off
+	  MaskDisplay		  "disp('diagrammi\\n  \\n (Bode e Nyquist)')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Diagrammi"
+	    Location		    [10, 245, 262, 384]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Bode"
+	      Ports		      [0, 0, 0, 0, 0]
+	      Position		      [50, 50, 105, 91]
+	      ShowName		      off
+	      OpenFcn		      "bode_tot"
+	      ShowPortLabels	      off
+	      MaskDisplay	      "disp('Bode')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Bode"
+		Location		[240, 349, 375, 439]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"automatic"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Annotation {
+		  Position		  [57, 47]
+		  VerticalAlignment	  "top"
+		  Text			  "bode"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Nyquist"
+	      Ports		      [0, 0, 0, 0, 0]
+	      Position		      [140, 50, 195, 90]
+	      ShowName		      off
+	      OpenFcn		      "nyq_tot"
+	      ShowPortLabels	      off
+	      MaskDisplay	      "disp('Nyquist')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Nyquist"
+		Location		[240, 349, 375, 439]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"automatic"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Annotation {
+		  Position		  [57, 47]
+		  VerticalAlignment	  "top"
+		  Text			  "bode"
+		}
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "singolarita'"
+	  Ports			  [0, 0, 0, 0, 0]
+	  Position		  [225, 20, 360, 71]
+	  ShowName		  off
+	  OpenFcn		  "sing_tot"
+	  ShowPortLabels	  off
+	  MaskType		  "singolarita' della f.d.t."
+	  MaskDisplay		  "disp('singolarità,\\n guadagno e ritardo')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "singolarita'"
+	    Location		    [10, 5308685, 185, 5308795]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Annotation {
+	      Position		      [97, 52]
+	      VerticalAlignment	      "top"
+	      Text		      "assegna"
+	    }
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "connessioni"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [30, 115, 60, 167]
+      ShowPortLabels	      off
+      System {
+	Name			"connessioni"
+	Location		[350, 85, 605, 255]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [120, 50, 160, 85]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "somma"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [135, 105, 160, 145]
+	  ShowName		  off
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	  SaturateOnIntegerOverflow on
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "controllore"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [380, 235, 485, 285]
+      ForegroundColor	      "magenta"
+      DropShadow	      on
+      ShowName		      off
+      ShowPortLabels	      off
+      MaskDisplay	      "disp('PID')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"controllore"
+	Location		[87, 95, 562, 268]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "diagrammi"
+	  Ports			  [0, 0, 0, 0, 0]
+	  Position		  [165, 30, 290, 81]
+	  ForegroundColor	  "magenta"
+	  ShowName		  off
+	  ShowPortLabels	  off
+	  MaskDisplay		  "disp('diagramma di Bode')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "diagrammi"
+	    Location		    [206, 153, 448, 246]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Bode"
+	      Ports		      [0, 0, 0, 0, 0]
+	      Position		      [100, 35, 155, 75]
+	      ForegroundColor	      "magenta"
+	      ShowName		      off
+	      OpenFcn		      "bode_c"
+	      ShowPortLabels	      off
+	      MaskDisplay	      "disp('Bode')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Bode"
+		Location		[240, 349, 375, 439]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"automatic"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Annotation {
+		  Position		  [57, 47]
+		  VerticalAlignment	  "top"
+		  Text			  "bode"
+		}
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "f.d.t."
+	  Ports			  [0, 0, 0, 0, 0]
+	  Position		  [20, 30, 155, 81]
+	  ForegroundColor	  "magenta"
+	  ShowName		  off
+	  OpenFcn		  "ass2_cn"
+	  ShowPortLabels	  off
+	  MaskType		  "assegnamento controllore"
+	  MaskDisplay		  "disp('inserimento f.d.t.')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "f.d.t."
+	    Location		    [10, 269, 185, 379]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Annotation {
+	      Position		      [97, 52]
+	      VerticalAlignment	      "top"
+	      Text		      "assegna"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "singolarita' e guadagno"
+	  Ports			  [0, 0, 0, 0, 0]
+	  Position		  [305, 30, 440, 81]
+	  ForegroundColor	  "magenta"
+	  ShowName		  off
+	  OpenFcn		  "sing_c"
+	  ShowPortLabels	  off
+	  MaskType		  "singolarita' della f.d.t."
+	  MaskDisplay		  "disp('singolarità e guadagno')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "singolarita' e guadagno"
+	    Location		    [10, 5308685, 185, 5308795]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Annotation {
+	      Position		      [97, 52]
+	      VerticalAlignment	      "top"
+	      Text		      "assegna"
+	    }
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "differenza"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [150, 109, 165, 136]
+      ShowName		      off
+      FontSize		      11
+      IconShape		      "rectangular"
+      Inputs		      "+-"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "grafico"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [685, 92, 720, 138]
+      ForegroundColor	      "yellow"
+      ShowPortLabels	      off
+      MaskType		      "Storage scope."
+      MaskDescription	      "Storage scope using MATLAB graph window.\nEnter"
+" plotting ranges and line type."
+      MaskHelp		      "This block uses a MATLAB figure window to plot "
+"the input signal.  The graph limits are automatically scaled to the min and m"
+"ax values of the signal stored in the scope's signal buffer.  Line type must "
+"be in quotes.  See the M-file sfunyst.m."
+      MaskPromptString	      "Initial Time Range:|Initial y-min:|Initial y-ma"
+"x:|Storage pts.:|Line type (rgbw-.:xo):"
+      MaskStyleString	      "edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||||"
+      MaskEnableString	      "on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on"
+      MaskInitialization      "npts = @4; color = @5; ax = [0, @1, @2, @3]; dt"
+"=-1;"
+      MaskDisplay	      "plot(0,0,100,100,[83,76,63,52,42,38,28,16,11,84"
+",11,11,11,90,90,11],[75,58,47,54,72,80,84,74,65,65,65,90,40,40,90,90])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "10|-10|10|2000|'y-/g--/c-./w:/m*/ro/b+'"
+      System {
+	Name			"grafico"
+	Location		[4, 61, 278, 254]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "x"
+	  Position		  [65, 55, 85, 75]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-function\nM-file which plots\nlines\n"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [130, 55, 180, 75]
+	  FunctionName		  "sfunyst"
+	  Parameters		  "ax, color, npts, dt"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Line {
+	  SrcBlock		  "x"
+	  SrcPort		  1
+	  DstBlock		  "S-function\nM-file which plots\nlines\n"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "help1"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [50, 230, 98, 277]
+      DropShadow	      on
+      ShowName		      off
+      FontSize		      20
+      ShowPortLabels	      off
+      MaskDisplay	      "disp('?')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"help1"
+	Location		[217, 247, 750, 430]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Annotation {
+	  Position		  [152, 37]
+	  VerticalAlignment	  "top"
+	  Text			  "i blocchi con l'ombreggiatura consentono \n"
+	  FontName		  "Arial"
+	}
+	Annotation {
+	  Position		  [167, 77]
+	  VerticalAlignment	  "top"
+	  Text			  "-  l'inserimento della funzione di trasferi"
+"mento "
+	}
+	Annotation {
+	  Position		  [182, 107]
+	  VerticalAlignment	  "top"
+	  Text			  " - l'ottenimento dei diagrammi di Bode e di"
+" Nyquist"
+	}
+	Annotation {
+	  Position		  [217, 142]
+	  VerticalAlignment	  "top"
+	  Text			  "- la determinazione delle singolarità, del "
+"guadagno e del ritardo"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "segnali"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [40, 9, 70, 61]
+      ForegroundColor	      "green"
+      ShowPortLabels	      off
+      System {
+	Name			"segnali"
+	Location		[37, 85, 292, 255]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "onda quadra"
+	  Ports			  [0, 1, 0, 0, 0]
+	  Position		  [190, 73, 225, 107]
+	  ForegroundColor	  "green"
+	  ShowPortLabels	  off
+	  MaskType		  "Pulse Generator"
+	  MaskDescription	  "Pulse Generator."
+	  MaskHelp		  "Pulse generator which ensures pulse\\ntrans"
+"itions are hit. Provides a vector of pulses when the height is entered as a v"
+"ector.\\nUnmask to see how it works."
+	  MaskPromptString	  "Pulse period (secs):|Pulse width:|Pulse hei"
+"ght:|Pulse start time:"
+	  MaskStyleString	  "edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on"
+	  MaskCallbackString	  "|||"
+	  MaskEnableString	  "on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on"
+	  MaskInitialization	  "Ts=@1; du=@2; ht=@3; stt=@4; ini=ones(lengt"
+"h(ht),1); st1=rem(stt,Ts); st2=rem(stt+du,Ts);if(Ts<=1.2*du),ini=zeros(length"
+"(ht),1);end;"
+	  MaskDisplay		  "plot(0,0,100,100,[90,75,75,60,60,35,35,20,2"
+"0,10],[20,20,80,80,20,20,80,80,20,20])"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "2|1|1|0"
+	  System {
+	    Name		    "onda quadra"
+	    Location		    [158, 441, 759, 682]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Clock
+	      Name		      "Clock1"
+	      Position		      [295, 100, 315, 120]
+	      ShowName		      off
+	      DisplayTime	      off
+	      Decimation	      "10"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [25, 30, 45, 50]
+	      Value		      "1"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [295, 149, 320, 171]
+	      Value		      "stt"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      Position		      [510, 102, 535, 128]
+	      ShowName		      off
+	      Gain		      "ht"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [285, 38, 315, 62]
+	      Operator		      "XOR"
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator1"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [355, 38, 385, 62]
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [455, 105, 480, 125]
+	      ShowName		      off
+	      Inputs		      "2"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      RelationalOperator
+	      Name		      "Relational\noperator"
+	      Position		      [370, 102, 400, 133]
+	      ShowName		      off
+	      Operator		      ">="
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [135, 35, 155, 55]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [130, 120, 150, 140]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay"
+	      Position		      [145, 75, 195, 95]
+	      Orientation	      "left"
+	      X0		      "0"
+	      SampleTime	      "[Ts,st1]"
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay1"
+	      Position		      [140, 165, 190, 185]
+	      Orientation	      "left"
+	      X0		      "ini"
+	      SampleTime	      "[Ts,st2]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "out_1"
+	      Position		      [560, 105, 580, 125]
+	      ShowName		      off
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator1"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, 60]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -35]
+	      DstBlock		      "Relational\noperator"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "out_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Gain"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Relational\noperator"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Clock1"
+	      SrcPort		      1
+	      DstBlock		      "Relational\noperator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Unit Delay"
+	      SrcPort		      1
+	      Points		      [-35, 0; 0, -35]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Unit Delay1"
+	      SrcPort		      1
+	      Points		      [-35, 0; 0, -40]
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[20, 0; 0, 85]
+		DstBlock		"Sum1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		Points			[70, 0; 0, 40]
+		DstBlock		"Unit Delay"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Logical\nOperator"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		Points			[55, 0; 0, 45]
+		DstBlock		"Unit Delay1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[90, 0; 0, -75]
+		DstBlock		"Logical\nOperator"
+		DstPort			2
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Step
+	  Name			  "scalino"
+	  Position		  [105, 74, 140, 106]
+	  ForegroundColor	  "green"
+	  Time			  "0"
+	  Before		  "0"
+	  After			  "1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Sin
+	  Name			  "sinusoide"
+	  Position		  [30, 78, 65, 112]
+	  ForegroundColor	  "green"
+	  Amplitude		  "1"
+	  Frequency		  "1"
+	  Phase			  "0"
+	  SampleTime		  "-1"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "sistema"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [195, 235, 285, 280]
+      ForegroundColor	      "blue"
+      DropShadow	      on
+      ShowName		      off
+      ShowPortLabels	      off
+      MaskDisplay	      "disp('sistema')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"sistema"
+	Location		[43, 166, 550, 258]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "diagrammi"
+	  Ports			  [0, 0, 0, 0, 0]
+	  Position		  [205, 10, 315, 62]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  ShowPortLabels	  off
+	  MaskDisplay		  "disp('diagrammi\\n  \\n (Bode e Nyquist)')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "diagrammi"
+	    Location		    [34, 236, 276, 329]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Bode"
+	      Ports		      [0, 0, 0, 0, 0]
+	      Position		      [30, 35, 85, 75]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      OpenFcn		      "bode_sis"
+	      ShowPortLabels	      off
+	      MaskDisplay	      "disp('Bode')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Bode"
+		Location		[240, 349, 375, 439]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"automatic"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Annotation {
+		  Position		  [57, 47]
+		  VerticalAlignment	  "top"
+		  Text			  "bode"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Nyquist"
+	      Ports		      [0, 0, 0, 0, 0]
+	      Position		      [120, 35, 175, 75]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      OpenFcn		      "nyq_sis"
+	      ShowPortLabels	      off
+	      MaskDisplay	      "disp('Nyquist')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Nyquist"
+		Location		[240, 349, 375, 439]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"automatic"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Annotation {
+		  Position		  [57, 47]
+		  VerticalAlignment	  "top"
+		  Text			  "bode"
+		}
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "f.d.t."
+	  Ports			  [0, 0, 0, 0, 0]
+	  Position		  [55, 15, 155, 56]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  OpenFcn		  "ass_sis"
+	  ShowPortLabels	  off
+	  MaskType		  "assegnamento sistema"
+	  MaskDisplay		  "disp('inserimento\\n f.d.t.')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "f.d.t."
+	    Location		    [10, 5308685, 185, 5308795]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Annotation {
+	      Position		      [97, 52]
+	      VerticalAlignment	      "top"
+	      Text		      "assegna"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "singolarita' e guadagno"
+	  Ports			  [0, 0, 0, 0, 0]
+	  Position		  [350, 15, 485, 66]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  OpenFcn		  "sing_s"
+	  ShowPortLabels	  off
+	  MaskType		  "singolarita' della f.d.t."
+	  MaskDisplay		  "disp('singolarità,\\n guadagno e ritardo')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "singolarita' e guadagno"
+	    Location		    [10, 5308685, 185, 5308795]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Annotation {
+	      Position		      [97, 52]
+	      VerticalAlignment	      "top"
+	      Text		      "assegna"
+	    }
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "sistema "
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [410, 95, 485, 145]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      OpenFcn		      "blocca"
+      FontSize		      11
+      ShowPortLabels	      off
+      MaskDisplay	      "disp('sistema')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"sistema "
+	Location		[250, 71, 465, 196]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [15, 65, 35, 85]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn"
+	  Position		  [115, 57, 185, 93]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  Numerator		  "num"
+	  Denominator		  "den"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "delay"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [70, 56, 90, 94]
+	  ShowPortLabels	  off
+	  System {
+	    Name		    "delay"
+	    Location		    [125, 196, 380, 426]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "in_1"
+	      Position		      [15, 110, 35, 130]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [180, 104, 210, 136]
+	      Threshold		      ".5"
+	    }
+	    Block {
+	      BlockType		      TransportDelay
+	      Name		      "Transport\nDelay"
+	      Position		      [85, 165, 125, 195]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      DelayTime		      "T"
+	      InitialInput	      "0"
+	      BufferSize	      "1024"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "control"
+	      Ports		      [0, 1, 0, 0, 0]
+	      Position		      [70, 105, 95, 135]
+	      ShowPortLabels	      off
+	      System {
+		Name			"control"
+		Location		[65, 181, 260, 331]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"automatic"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Constant
+		  Name			  "T"
+		  Position		  [20, 45, 40, 65]
+		  Value			  "T"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "uguale"
+		  Position		  [105, 53, 135, 77]
+		  Operator		  "=="
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "zero"
+		  Position		  [20, 95, 40, 115]
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_1"
+		  Position		  [200, 55, 220, 75]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "zero"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -35]
+		  DstBlock		  "uguale"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "T"
+		  SrcPort		  1
+		  DstBlock		  "uguale"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "uguale"
+		  SrcPort		  1
+		  DstBlock		  "out_1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "out_1"
+	      Position		      [240, 110, 260, 130]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Transport\nDelay"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, -50]
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "in_1"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		Points			[0, -60; 115, 0]
+		DstBlock		"Switch"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 60]
+		DstBlock		"Transport\nDelay"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "out_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "control"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      Position		      [137, 102]
+	      VerticalAlignment	      "top"
+	      Text		      "1 se T=0"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [200, 65, 220, 85]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Transfer Fcn"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "delay"
+	  SrcPort		  1
+	  DstBlock		  "Transfer Fcn"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  DstBlock		  "delay"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "somma"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [340, 104, 360, 131]
+      ForegroundColor	      "magenta"
+      ShowName		      off
+      FontSize		      11
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "somma "
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [545, 98, 565, 127]
+      ShowName		      off
+      FontSize		      11
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      SaturateOnIntegerOverflow	on
+    }
+    Line {
+      SrcBlock		      "sistema "
+      SrcPort		      1
+      DstBlock		      "somma "
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      " somma "
+      SrcPort		      1
+      Points		      [-385, 0]
+      DstBlock		      "differenza"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "differenza"
+      SrcPort		      1
+      DstBlock		      "PID Controller"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "somma "
+      SrcPort		      1
+      Points		      [80, 0]
+      Branch {
+	Points			[0, 70]
+	DstBlock		" somma "
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"grafico"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "PID Controller"
+      SrcPort		      1
+      DstBlock		      "somma"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "somma"
+      SrcPort		      1
+      DstBlock		      "sistema "
+      DstPort		      1
+    }
+    Annotation {
+      Position		      [132, 87]
+      VerticalAlignment	      "top"
+      ForegroundColor	      "green"
+      Text		      "y*"
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Position		      [317, 87]
+      VerticalAlignment	      "top"
+      ForegroundColor	      "green"
+      Text		      "d3"
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Position		      [382, 97]
+      VerticalAlignment	      "top"
+      ForegroundColor	      "magenta"
+      Text		      "u"
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Position		      [522, 77]
+      VerticalAlignment	      "top"
+      ForegroundColor	      "green"
+      Text		      "d1"
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Position		      [572, 212]
+      VerticalAlignment	      "top"
+      ForegroundColor	      "green"
+      Text		      "d2"
+      FontWeight	      "bold"
+    }
+  }
+}

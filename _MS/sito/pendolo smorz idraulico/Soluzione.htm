@@ -1,0 +1,119 @@
+
+<!-- saved from url=(0071)http://automatica.ing.unibs.it/mco/ms/nlineari/esercizi/pendolosol.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="./Soluzione_files/sitestyle.css" type="text/css">
+<title>Sistemi dinamici del secondo ordine - Esercizi: pendolo con smorzamento idraulico (soluzione)</title>
+<script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
+
+<body>
+
+<h1>Pendolo con smorzamento idraulico (soluzione)</h1>
+
+<p align="justify">        
+L'obiettivo dell'esercizio è quello di analizzare uno dei limiti della tecnica di
+linearizzazione.<br>
+In questo caso viene effettuata la linearizzazione di un sistema non lineare nell'intorno del
+suo punto di equilibrio (asintoticamente stabile) e si verifica che il modello lineare porta
+alla determinazione di un modello non asintoticamente stabile, ma solo semplicemente
+stabile.<br>
+Si vuole dimostrare che l'asintotica stabilità di uno stato di equilibrio non implica sempre
+l'asintotica stabilità del sistema linearizzato. Inoltre si verifica l'applicazione del criterio di
+asintotica stabilità di Liapunov. <br>
+Le equazioni che regolano il comportamento del sistema non lineare sono riportate qui
+sotto:
+</p>
+<p align="center"><img src="./Soluzione_files/formes12.gif"> </p>
+<p align="justify">Lo stato di equilibrio che si vuole analizzare è quello dell'origine del piano di stato. Il
+sistema linearizzato si ottiene semplicemente sostituendo alla funzione <i>sen(x<sub>1</sub>)</i> la sua
+approssimazione lineare x<sub>1</sub> e trascurando il termine quadratico (infinitesimo di ordine
+superiore rispetto a x<sub>2</sub>).
+Il sistema linearizzato avrà così forma:
+</p>
+<p align="center"><img src="./Soluzione_files/formes13.gif"> </p>
+<p align="justify">Gli autovalori del sistema sono quindi:</p>
+<p align="center"><img src="./Soluzione_files/formes14.gif"> </p>
+<p align="center"><img src="./Soluzione_files/formes15.gif"> </p>
+<p align="justify">quindi l'origine è un punto di centro e risulta inoltre un sistema semplicemente stabile.<br>
+I valori utilizzati nelle prove sono mostrati nella tabella sottostante:
+</p>
+<p align="center"><img src="./Soluzione_files/formes16.gif"> </p>
+<p align="justify">La prova dell'asintotica stabilità del punto di equilibrio è data dal teorema di Liapunov.
+Infatti, definita la funzione energia meccanica del sistema pendolo come:
+</p>
+<p align="center"><img src="./Soluzione_files/formes17.gif"> </p>
+<p align="justify">è immediato notare come essa sia continua nelle sue derivate parziali e definita positiva in:
+</p>
+<p align="center"><img src="./Soluzione_files/formes18.gif"> </p>
+<p align="justify">Risulta allora:
+</p>
+<p align="center"><img src="./Soluzione_files/formes19.gif"> </p>
+<p align="justify">Tale funzione risulta definita negativa poiché nell'intorno dell'origine risulta sempre
+negativa.<br>
+Dal criterio di asintotica stabilità di Liapunov si conclude che il punto di equilibrio
+considerato (pendolo fermo in posizione verticale) è asintoticamente stabile.
+</p>
+<p align="justify">I movimenti delle variabili di stato rappresentati nella figura a destra sono riferiti 
+alla traiettoria graficata in rosso nella figura a sinistra.
+
+</p>
+<br>
+<img src="./Soluzione_files/pendoloa.gif" align="absmiddle">			 
+<img src="./Soluzione_files/movimentopendolo.gif">
+
+<p align="justify">Nel grafico seguente è rappresentata l'altezza del pendolo, rispetto al punto di riposo stabile, in funzione del tempo.
+</p>
+<br>
+<p><img src="./Soluzione_files/uscita_finale.gif" align="absmiddle"> 
+</p>
+
+
+<br>
+
+<table border="1" width="100%" bordercolor="black">
+  <tbody><tr>
+    <td>
+    </td>
+  </tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" width="100%" bordercolor="black">
+  <tbody><tr>
+    <td width="80%"><p align="JUSTIFY">In allegato viene fornito uno schema simulink Matlab, realizzato per la versione 6.5 necessita del Control System Toolbox.</p>
+<p align="JUSTIFY">Si consiglia di scaricare lo script nella directory di lavoro di Matlab (../works)</p>
+<p align="JUSTIFY">Una volta collocatisi nella directory di lavoro di Matlab è sufficiente richiamare <font face="Courier New" size="2"><a href="http://automatica.ing.unibs.it/mco/ms/nlineari/esercizi/pend.zip" border="0">pend.zip</a></font>
+    </p></td>
+    <td align="center">
+    <img src="./Soluzione_files/image330.gif" width="72" height="58" border="0">
+    </td>
+  </tr>
+  <tr>
+    <td width="80%"><p align="JUSTIFY">Oltre allo schema simulink viene allegata una applet realizzata in java che implementa una soluzione interattiva dell'esercizio
+    in cui è possibile verificare il comportamento del sistema al variare dei parametri.
+Per la corretta visualizzazione è necessario disporre della java virtual machine scaricabile gratuitamente in rete.</p>
+<p align="JUSTIFY">File: <font face="Courier New" size="2"><a href="http://automatica.ing.unibs.it/mco/ms/nlineari/esercizi/pendolo_applet.html" border="0">Applet pendolo</a></font>
+    </p></td>
+    <td align="center">
+    <a href="http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=5&PartDetailId=J2SDKEE-1_4_1-OTH-G-CS&SiteId=DSC&TransactionId=try"><img src="./Soluzione_files/java.gif" border="0"></a>
+    </td>
+  </tr>
+  <tr>
+    <td width="80%"><p align="JUSTIFY">Infine viene fornito un foglio di lavoro realizzato con Microsoft Excel 2000 
+	che implementa una soluzione interattiva dell'esercizio
+    in cui è possibile verificare il comportamento del sistema al variare dei parametri.</p>
+
+<p align="JUSTIFY">File: <font face="Courier New" size="2"><a href="http://automatica.ing.unibs.it/mco/ms/nlineari/esercizi/excel/PENDOLO.XLS" border="0">Pendolo.xls</a></font>
+    </p></td>
+    <td align="center">
+    <a href="http://automatica.ing.unibs.it/mco/ms/nlineari/esercizi/excel/xlviewer.exe"> <img src="./Soluzione_files/excel.gif" border="0"></a>
+    </td>
+  </tr>
+  <tr>
+</tr></tbody></table>
+
+
+
+
+</body></html>

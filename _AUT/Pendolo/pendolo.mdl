@@ -1,0 +1,927 @@
+Model {
+  Name			  "pendolo"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "20"
+  SolverMode		  "Auto"
+  Solver		  "ode23"
+  RelTol		  "1e-9"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "0.01"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "none"
+  UnconnectedOutputMsg	  "none"
+  UnconnectedLineMsg	  "none"
+  InheritedTsInSrcMsg	  "none"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  on
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks on
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Mon Apr 03 19:03:17 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "Administrator"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Feb 20 10:42:57 2001"
+  ModelVersionFormat	  "1.%<AutoIncrement:124>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "pendolo"
+    Location		    [4, 74, 1020, 344]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    212
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Constant
+      Name		      "Constante"
+      Position		      [235, 140, 265, 170]
+      ForegroundColor	      "green"
+      Value		      "0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "equazioni pendolo"
+      Ports		      [1, 3, 0, 0, 0]
+      Position		      [360, 127, 475, 183]
+      ForegroundColor	      "blue"
+      ShowPortLabels	      on
+      MaskType		      "pendolo"
+      MaskDescription	      "Equazioni che descrizono il moto del pendolo. "
+"\nIntrodurre la condizione iniziale per la posizione angolare (x1) in rad\ne "
+"la velocita' angolare (x2) in rad/sec"
+      MaskPromptString	      "condizione iniziale per x1|condizione iniziale "
+"per x2"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskVariables	      "x1=@1;x2=@2;"
+      MaskDisplay	      "disp('dx1/dt = x2               \\n dx2/dt = -s"
+"en(x1)-x2-u')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "pi-0.01|0"
+      System {
+	Name			"equazioni pendolo"
+	Location		[147, 74, 565, 364]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [75, 58, 105, 72]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "1/len"
+	  Position		  [55, 89, 95, 141]
+	  Gain			  "1"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Pivot point\nfor pendulum1"
+	  Position		  [160, 24, 190, 56]
+	  Value			  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [3, 1, 0, 0, 0]
+	  Position		  [150, 97, 170, 133]
+	  ShowName		  off
+	  IconShape		  "rectangular"
+	  Inputs		  "---"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "c/(m*len^2)"
+	  Position		  [155, 158, 190, 202]
+	  Orientation		  "left"
+	  Gain			  "1"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "g*sin(theta)"
+	  Position		  [125, 228, 205, 262]
+	  Orientation		  "left"
+	  Expr			  "sin(u)"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "theta"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [230, 98, 255, 132]
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "x1"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "theta\ndot"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [185, 98, 210, 132]
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "x2"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "x & theta1"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [310, 87, 340, 123]
+	  Inputs		  "2"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [365, 98, 395, 112]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out2"
+	  Position		  [335, 162, 365, 178]
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out3"
+	  Position		  [340, 220, 370, 240]
+	  NamePlacement		  "alternate"
+	  Port			  "3"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  DstBlock		  "theta\ndot"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "c/(m*len^2)"
+	  SrcPort		  1
+	  Points		  [-35, 0; 0, -55]
+	  DstBlock		  "Sum2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "theta\ndot"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "theta"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 60]
+	    Branch {
+	      Points		      [0, 5]
+	      DstBlock		      "c/(m*len^2)"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 55]
+	      DstBlock		      "Out3"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Pivot point\nfor pendulum1"
+	  SrcPort		  1
+	  Points		  [80, 0; 0, 55]
+	  DstBlock		  "x & theta1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "theta"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "x & theta1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 65]
+	    Branch {
+	      Points		      [0, 65]
+	      DstBlock		      "g*sin(theta)"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, -10]
+	      DstBlock		      "Out2"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "1/len"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "g*sin(theta)"
+	  SrcPort		  1
+	  Points		  [-90, 0; 0, -130]
+	  DstBlock		  "1/len"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "x & theta1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  Points		  [0, 40]
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "grafico 3D"
+      Ports		      [3, 0, 0, 0, 0]
+      Position		      [695, 126, 745, 184]
+      ShowPortLabels	      off
+      MaskType		      "grafico 3D"
+      MaskDescription	      "Movimento dello stato del sistema\nIntrodurre g"
+"li intervalli di rappresentazione del tempo e dello stato"
+      MaskHelp		      "This block can be used to explore limit cycles."
+" Look at the m-file sfunxyz.m to see how it works."
+      MaskPromptString	      "t [min,max]:|x1 [min,max]:|x2 [min,max]:|orient"
+"amento:"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskVariables	      "xlim=@1;ylim=@2;zlim=@3;view=@4;"
+      MaskInitialization      "st=-1;"
+      MaskDisplay	      "plot(0,0,100,100,[12,91,91,12,12],[90,90,45,45,"
+"90],[51,57,65,75,80,79,75,67,60,54,51,48,42,34,28,27,31,42,51],[71,68,66,66,7"
+"2,79,83,84,81,77,71,60,54,54,58,65,71,74,71])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "[0,20]|[-pi 2*pi]|[-3 3]|[10 30]"
+      System {
+	Name			"grafico 3D"
+	Location		[245, 79, 993, 352]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "x"
+	  Position		  [10, 30, 30, 50]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "y"
+	  Position		  [10, 100, 30, 120]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "z"
+	  Position		  [10, 155, 30, 175]
+	  Port			  "3"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [3, 1, 0, 0, 0]
+	  Position		  [100, 93, 130, 127]
+	  Inputs		  "3"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-function\nM-file which plots\nlines\n"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [185, 99, 260, 121]
+	  FunctionName		  "sfunxyzpend"
+	  Parameters		  "xlim,ylim,zlim,view,st"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Line {
+	  SrcBlock		  "z"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, -45]
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "y"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "x"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, 60]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "S-function\nM-file which plots\nlines\n"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "pendolo"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [575, 36, 625, 84]
+      ForegroundColor	      "red"
+      ShowPortLabels	      on
+      MaskType		      "Animation Block"
+      MaskDescription	      "Animazione di un pendolo sottoposto all'azione "
+"di una forza"
+      MaskPromptString	      "Sample time:"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskVariables	      "ts=@1;"
+      MaskDisplay	      "plot([.1,.9],[.9,.9],[.5,.2],[.9,.25],[.475,.47"
+"5,.525,.525,.475],[.875,.925,.925,.875,.875])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "0.05"
+      System {
+	Name			"pendolo"
+	Location		[526, 265, 741, 353]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [20, 40, 50, 50]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "Animation function"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [70, 25, 140, 65]
+	  DeleteFcn		  "if ~isempty(findobj('type','figure','name',"
+"'simppend Animation'));close('simppend Animation'); end;"
+	  FunctionName		  "pendolosim"
+	  Parameters		  "ts"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Animation function"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "segnali"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [30, 25, 60, 77]
+      ForegroundColor	      "green"
+      ShowPortLabels	      off
+      System {
+	Name			"segnali"
+	Location		[343, 115, 628, 291]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constante"
+	  Position		  [30, 55, 60, 85]
+	  ForegroundColor	  "green"
+	  Value			  "1"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "onda\nquadra"
+	  Ports			  [0, 1, 0, 0, 0]
+	  Position		  [230, 48, 265, 82]
+	  ForegroundColor	  "green"
+	  ShowPortLabels	  off
+	  MaskType		  "Pulse Generator"
+	  MaskDescription	  "Pulse Generator."
+	  MaskHelp		  "Pulse generator which ensures pulse\\ntrans"
+"itions are hit. Provides a vector of pulses when the height is entered as a v"
+"ector.\\nUnmask to see how it works."
+	  MaskPromptString	  "Pulse period (secs):|Pulse width:|Pulse hei"
+"ght:|Pulse start time:"
+	  MaskStyleString	  "edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on"
+	  MaskCallbackString	  "|||"
+	  MaskEnableString	  "on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on"
+	  MaskInitialization	  "Ts=@1; du=@2; ht=@3; stt=@4; ini=ones(lengt"
+"h(ht),1); st1=rem(stt,Ts); st2=rem(stt+du,Ts);if(Ts<=1.2*du),ini=zeros(length"
+"(ht),1);end;"
+	  MaskDisplay		  "plot(0,0,100,100,[90,75,75,60,60,35,35,20,2"
+"0,10],[20,20,80,80,20,20,80,80,20,20])"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "2|1|1|0"
+	  System {
+	    Name		    "onda\nquadra"
+	    Location		    [158, 441, 759, 682]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Clock
+	      Name		      "Clock1"
+	      Position		      [295, 100, 315, 120]
+	      ShowName		      off
+	      DisplayTime	      off
+	      Decimation	      "10"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [25, 30, 45, 50]
+	      Value		      "1"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [295, 149, 320, 171]
+	      Value		      "stt"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      Position		      [510, 102, 535, 128]
+	      ShowName		      off
+	      Gain		      "ht"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [285, 38, 315, 62]
+	      Operator		      "XOR"
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator1"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [355, 38, 385, 62]
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [455, 105, 480, 125]
+	      ShowName		      off
+	      Inputs		      "2"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      RelationalOperator
+	      Name		      "Relational\noperator"
+	      Position		      [370, 102, 400, 133]
+	      ShowName		      off
+	      Operator		      ">="
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [135, 35, 155, 55]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [130, 120, 150, 140]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay"
+	      Position		      [145, 75, 195, 95]
+	      Orientation	      "left"
+	      X0		      "0"
+	      SampleTime	      "[Ts,st1]"
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay1"
+	      Position		      [140, 165, 190, 185]
+	      Orientation	      "left"
+	      X0		      "ini"
+	      SampleTime	      "[Ts,st2]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "out_1"
+	      Position		      [560, 105, 580, 125]
+	      ShowName		      off
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator1"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, 60]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -35]
+	      DstBlock		      "Relational\noperator"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "out_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Gain"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Relational\noperator"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Clock1"
+	      SrcPort		      1
+	      DstBlock		      "Relational\noperator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Unit Delay"
+	      SrcPort		      1
+	      Points		      [-35, 0; 0, -35]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Unit Delay1"
+	      SrcPort		      1
+	      Points		      [-35, 0; 0, -40]
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[20, 0; 0, 85]
+		DstBlock		"Sum1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		Points			[70, 0; 0, 40]
+		DstBlock		"Unit Delay"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Logical\nOperator"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		Points			[55, 0; 0, 45]
+		DstBlock		"Unit Delay1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[90, 0; 0, -75]
+		DstBlock		"Logical\nOperator"
+		DstPort			2
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Step
+	  Name			  "scalino"
+	  Position		  [175, 54, 205, 86]
+	  ForegroundColor	  "green"
+	  Time			  "0"
+	  Before		  "0"
+	  After			  "1"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Sin
+	  Name			  "sinusoide"
+	  Position		  [100, 53, 135, 87]
+	  ForegroundColor	  "green"
+	  Amplitude		  "1"
+	  Frequency		  "1"
+	  Phase			  "0"
+	  SampleTime		  "-1"
+	}
+      }
+    }
+    Block {
+      BlockType		      Clock
+      Name		      "tempo"
+      Position		      [615, 122, 645, 148]
+      ShowName		      off
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Line {
+      SrcBlock		      "equazioni pendolo"
+      SrcPort		      3
+      DstBlock		      "grafico 3D"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "equazioni pendolo"
+      SrcPort		      2
+      DstBlock		      "grafico 3D"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Constante"
+      SrcPort		      1
+      DstBlock		      "equazioni pendolo"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "equazioni pendolo"
+      SrcPort		      1
+      Points		      [80, 0]
+      DstBlock		      "pendolo"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "tempo"
+      SrcPort		      1
+      DstBlock		      "grafico 3D"
+      DstPort		      1
+    }
+    Annotation {
+      Position		      [526, 146]
+      ForegroundColor	      "blue"
+      Text		      "x1"
+      FontName		      "Arial"
+    }
+    Annotation {
+      Position		      [526, 166]
+      ForegroundColor	      "blue"
+      Text		      "x2"
+      FontName		      "Arial"
+    }
+  }
+}

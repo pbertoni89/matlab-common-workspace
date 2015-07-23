@@ -1,0 +1,46 @@
+Lezioni capite.
+
+
+Indice:
+
+Lezione 7 
+
+-Es1:	Creazione serie di fourier Dente di sega, tutto ciò dato X0 bk e ak ma ak
+	essendo un segnale dispari è uguale a zero.
+
+-Es2:	Sviluppo serie di fourier dato un segnale x(t) di cui vengono dati inerenti 
+	alla serie x0 e xk.
+
+
+
+Lezione 8:
+
+-Es1:	Norme, distanze, prodotti scalari.
+
+
+-Es2:	Crosscorrelazioni (Viene fatta su 2 segnali diversi), Autocorrelazione (stesso segnale)
+	Densità interspettrale (Tfourier della crosscorrelazione).
+
+-Es3:	Proiezioni su basi. (Gram Schmidt).
+
+
+Lezione 9:
+
+
+-Es1:	Trasformazioni di variabili casuali.
+
+-Es2: 	Variabili congiunte.
+
+-Es3:	Creazione del processo sinusoide a fase casuale.
+
+-Es4:	Creazione del processo PAM
+
+-Es5:	Creazione del processo gaussiano (Bianco).
+
+
+
+Lezione 10:
+
+
+-Es1:	Filtraggio del processo PAM con due filtri e valutazione stazionarietà ed
+	ergodicità.

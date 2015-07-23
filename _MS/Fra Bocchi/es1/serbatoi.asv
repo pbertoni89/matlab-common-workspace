@@ -1,0 +1,33 @@
+clc;
+close all;
+clear all;
+
+% x1 livello del serbatoio 1
+% x2 livello del serbatoio 2
+
+% serbatoio 1
+% u portante entrante
+% k1*x1 portata uscente
+% S1 area del serbatoio
+% S1*Dx1=u-k1*x1
+% Dx1=u/S1-k1/S1*x1
+
+% serbatoio 2
+% k1*x1 portante entrante
+% k2*x2 portata uscente
+% S2 area del serbatoio
+% S2*Dx2=k1*x1-k2*x2
+% Dx2=k1/S2*x1-k2/S2*x2
+
+% portata uscente dal 2 = uscita
+% y=k2*x2
+
+S1=1; 
+S2=1;
+k1=0.5; 
+k2=0.8;
+u=1; 
+x0=[1,1];
+
+
+A = [k1/S];

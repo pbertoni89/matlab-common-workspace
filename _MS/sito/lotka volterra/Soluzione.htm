@@ -1,0 +1,164 @@
+
+<!-- saved from url=(0075)http://automatica.ing.unibs.it/mco/ms/nlineari/esercizi/lotkasoluzione.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="./Soluzione_files/sitestyle.css" type="text/css">
+<title>Sistemi dinamici del secondo ordine: Esercizi - Lotka-Volterra (soluzione)</title>
+<script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
+
+<body>
+
+<h1>Il modello preda-predatore di Lotka-Volterra (Soluzione)</h1>
+
+<p align="justify">       
+Per un primo studio della dinamica del sistema è conveniente sfruttare il metodo delle isocline cioè
+tracciare nel piano <i>N<sub>1</sub></i>-<i>N<sub>2</sub></i> il luogo dei punti per cui <img src="./Soluzione_files/formes05.gif" width="55" height="25" align="bottom"> e 
+<img src="./Soluzione_files/formes06.gif" width="55" height="25" align="bottom">. 
+
+L'intersezione delle isocline fornisce gli stati equilibrio. A sceonda del valore dei parametri si hanno due casi:
+</p>
+
+<ol>
+<li><img src="./Soluzione_files/formes07.gif" align="center">   
+     <br> Si hanno due soli stati di equilibrio cioè:
+<br>
+<p>
+</p><ol>
+<li><img src="./Soluzione_files/formes09.gif" align="middle">
+
+</li><li><img src="./Soluzione_files/formes10.gif" align="middle">
+   
+</li></ol>
+<br>Per determinare la natura dei due stati di equilibrio, si procede linearizzando il sistema nell'intorno di ciascuno di essi. Lo Jacobiano del sistema è: <br>
+<p align="center"><img src="./Soluzione_files/formes50.gif"></p>
+
+<p>Valutazione dello Jacobiano nell'origine:</p>
+<p align="center"><img src="./Soluzione_files/formes51.gif"></p>
+<p>Dall'analisi degli autovalori del sistema, tenendo conto dell'ipotesi <img src="./Soluzione_files/formes07.gif" align="center"> 
+si deduce che l'origine è un punto di equilibrio instabile</p>
+<p>Valutazione dello Jacobiano nel secondo punto di equilibrio:</p>
+<p align="center"><img src="./Soluzione_files/formes52.gif"></p>
+<p>Dall'analisi degli autovalori del sistema, tenendo conto dell'ipotesi <img src="./Soluzione_files/formes07.gif" align="center"> 
+si deduce che il secondo punto di equilibrio è stabile</p>
+
+Infatti quando la preda è poco abbondante nell'ambiente (<i>k<sub>1</sub></i>) o il predatore è poco efficiente, 
+cioè poco mobile e pericoloso (<i>e</i>, <i>p</i> bassi), o il predatore ha un'elevata mortalità (<img src="./Soluzione_files/formes03.gif" align="bottom"> alto), il risultato 
+è che il predatore è destinato all'estinzione e la preda invece tende alla sua capacità portatnte <i>K<sub>1</sub></i>.
+
+<p></p>
+
+</li><li><img src="./Soluzione_files/formes08.gif" align="center">
+<br> Si hanno tre stati di equilibrio cioè:
+<br>
+<ol>
+<li><img src="./Soluzione_files/formes09.gif" align="middle">
+</li><li><img src="./Soluzione_files/formes10.gif" align="middle">
+</li><li><img src="./Soluzione_files/formes11.gif" align="middle">
+<p>
+</p></li></ol>
+   Per determinare la natura dei tre stati di equilibrio, si procede linearizzando il sistema nell'intorno di ciascuno di essi. Lo Jacobiano del sistema è: 
+<br>
+<p align="center"><img src="./Soluzione_files/formes50.gif"></p>
+
+<p>Valutazione dello Jacobiano nell'origine:</p>
+<p align="center"><img src="./Soluzione_files/formes51.gif"></p>
+<p>Dall'analisi degli autovalori del sistema, tenendo conto dell'ipotesi <img src="./Soluzione_files/formes08.gif" align="center"> 
+si deduce che l'origine è un punto di equilibrio instabile.</p>
+<p>Valutazione dello Jacobiano nel secondo punto di equilibrio:</p>
+<p align="center"><img src="./Soluzione_files/formes52.gif"></p>
+<p>Dall'analisi degli autovalori del sistema, tenendo conto dell'ipotesi <img src="./Soluzione_files/formes08.gif" align="center"> 
+si deduce che il secondo punto di equilibrio è instabile.</p>
+<p>Valutazione dello Jacobiano nel terzo punto di equilibrio:</p>
+<p align="center"><img src="./Soluzione_files/formes53.gif"></p>
+<p>Dall'analisi degli autovalori del sistema, tenendo conto dell'ipotesi <img src="./Soluzione_files/formes08.gif" align="center"> 
+si deduce che il terzo punto di equilibrio è stabile.</p>
+Si osserva che quando la capacità portante della preda è sufficientemente alta, le traiettorie dello stato verso il punto di equilibrio
+stabile sono a spirale ovvero l'andamento delle popolazioni è oscillante.
+
+</li>
+
+</ol>
+<p></p>
+<p align="justify">Il modello mette quindi in evidenza tre possibili comportamenti:
+
+</p>
+
+<ol>
+<li><i>estinzione del predatore</i> <br>
+<p align="justify">I movimenti delle variabili di stato rappresentati nella figura a destra sono riferiti 
+alla traiettoria graficata in rosso nella figura a sinistra.
+</p>
+<img src="./Soluzione_files/lvesti.gif" align="left"> 
+<img src="./Soluzione_files/movimento_finale.gif" height="325" width="406" align="right">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</li>
+
+<li><i>convivenza di preda e predatore senza oscillazioni</i><br>
+<p align="justify">I movimenti delle variabili di stato rappresentati nella figura a destra sono riferiti 
+alla traiettoria graficata in rosso nella figura a sinistra.
+</p>
+<img src="./Soluzione_files/lvnonoscil.gif" align="left"> 
+<img src="./Soluzione_files/movimento_finale2.gif" height="325" width="406" align="right">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</li>
+
+<li><i>convivenza di preda e predatore con oscillazioni</i><br>
+<p align="justify">I movimenti delle variabili di stato rappresentati nella figura a destra sono riferiti 
+alla traiettoria graficata in rosso nella figura a sinistra.
+</p>
+<img src="./Soluzione_files/lvoscill.gif" align="left"> 
+<img src="./Soluzione_files/movimento_finale3.gif" height="325" width="406" align="right">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</li>
+</ol>
+
+<br><br><br>
+
+<table border="1" width="100%" bordercolor="black">
+  <tbody><tr>
+    <td>
+    </td>
+  </tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" width="100%" bordercolor="black">
+  <tbody><tr>
+    <td width="80%"><p align="JUSTIFY">In allegato viene fornito uno schema simulink Matlab, realizzato per la versione 6.5 necessita del Control System Toolbox.</p>
+<p align="JUSTIFY">Si consiglia di scaricare lo script nella directory di lavoro di Matlab (../works)</p>
+<p align="JUSTIFY">Una volta collocatisi nella directory di lavoro di Matlab è sufficiente richiamare <font face="Courier New" size="2"><a href="http://automatica.ing.unibs.it/mco/ms/nlineari/esercizi/lv.zip" border="0">lv.zip</a></font>
+    </p></td>
+    <td align="center">
+    <img src="./Soluzione_files/image330.gif" width="72" height="58" border="()">
+    </td>
+  </tr>
+  <tr>
+    <td width="80%"><p align="JUSTIFY">Oltre allo schema simulink viene allegata una applet realizzata in java che implementa una soluzione interattiva dell'esercizio
+    in cui è possibile verificare il comportamento del sistema al variare dei parametri.
+Per la corretta visualizzazione è necessario disporre della java virtual machine scaricabile gratuitamente in rete.</p>
+<p align="JUSTIFY">File: <font face="Courier New" size="2"><a href="http://automatica.ing.unibs.it/mco/ms/nlineari/esercizi/lotka_applet.html" border="0">Applet Lotka-Volterra</a></font>
+    </p></td>
+    <td align="center">
+    <a href="http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=5&PartDetailId=J2SDKEE-1_4_1-OTH-G-CS&SiteId=DSC&TransactionId=try"><img src="./Soluzione_files/java.gif" border="0"></a>
+    </td>
+  </tr>
+  <tr>
+    <td width="80%"><p align="JUSTIFY">Infine viene fornito un foglio di lavoro realizzato con Microsoft Excel 2000 
+	che implementa una soluzione interattiva dell'esercizio
+    in cui è possibile verificare il comportamento del sistema al variare dei parametri.</p>
+
+<p align="JUSTIFY">File: <font face="Courier New" size="2"><a href="http://automatica.ing.unibs.it/mco/ms/nlineari/esercizi/excel/lotka-volterra.xls" border="0">lotkavolterra.xls</a></font>
+    </p></td>
+    <td align="center">
+    <a href="http://automatica.ing.unibs.it/mco/ms/nlineari/esercizi/excel/xlviewer.exe"> <img src="./Soluzione_files/excel.gif" border="0"></a>
+    </td>
+  </tr>
+  <tr>
+</tr></tbody></table>
+
+
+
+
+</body></html>

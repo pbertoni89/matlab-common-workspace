@@ -1,0 +1,22 @@
+%pioggia
+
+z = [271 201 323 214 218 333 262 930 307 449]';
+x = [36525 45227 57442 70737 69737 70477 83987 105737 107207 129237]';
+y = [24498 3524 3139 7504 39479 59794 39204 53954 43104 48904]';
+p = [1615 1547 1565 1355 1408 1562 1112 1008 1095 869]';
+
+
+% az+b
+
+%definizione della matrice M
+M=[z ones(10,1)];  
+
+% Calcolo del vettore contenente i parametri del modello (v)
+v = (inv(M'*M))*M'* p;
+
+%coefficienti della retta
+a=v(1)
+b=v(2)
+
+
+%% ax + by +c

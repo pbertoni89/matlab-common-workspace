@@ -1,0 +1,28 @@
+Appunti dalle esercitazioni:
+
+Processi stocastici:	Caratterizzare un processo = prendere 2 istanti di tempo che mi generano 2 VC.
+
+			Stazionarietà del 1° ordine in senso STRETTO = la funzione di densità NON deve dipendere dal tempo. (Per realizzazioni diverse ho pdf diverse?)
+			Stazionarietà del 1° ordine in senso LATO = Il valor medio del processo NON deve dipendere dal tempo.
+			
+			Stazionarietà senso stretto ==> stazionarietà senso LATO
+
+			
+			Stazionarietà 2° ordine o secondo autocorrelazione = Rx(t1,t2)=Rx(t2-t1) oppure Rx(t1,t1+tau)=Rx(tau).
+			
+			La stazionarietà 2° ordine ==> 1° ordine.
+
+
+			Ergodicità rispetto alla media (senso lato 1° ordine) = Lo è se il valor medio è uguale per ogni realizzazione.
+			
+			Ergodicità rispetto all'autocorrelazione (senso lato 2° ordine) = Rx(t1,t2)=Rx(tau)=phiXi(tau) dove phiXi è l'autocorrelazione del segnale deterministico
+		        (Questo posso farlo se stazionario rispetto alla media)
+
+			Se ergodico allora stazionario in senso stretto.
+
+
+
+
+Sinusoide a fase casuale:	Stazionario 1° e 2° ordine.
+				Ergodico rispetto media.
+				Ergodico rispetto autocorrelazione.

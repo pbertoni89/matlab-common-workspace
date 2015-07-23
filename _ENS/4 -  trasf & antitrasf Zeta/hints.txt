@@ -1,0 +1,36 @@
+tf zplane
+
+zpk pole zero
+
+freqz roots
+
+tf2zp zp2ss ss2tf
+
+fvtool
+
+filter: sintetizza il filtro a partire dalla rispsota in frequenza
+
+n=-100:100
+H = tf( [  ] );
+
+
+1) inserire H(z) come tf( N(z), D(z) )
+
+2) trovare i poli come le radici del denominatore
+
+3) associare una ROC alla Z. come si fa?
+	con n poli di modulo differente, ci saranno n+1 possibili ROC !
+
+	ci serve quindi ordinare il vettore dei poli psorted = sort(p)
+	eliminiamone i poli ripetuti! psorted2 = 
+
+4) prompt all utente: su quale ROC si vuole fare l'antitrasformata?
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ANTITRASFORMAZIONE CON FRATTI SEMPLICI
+
+    parto da X(z) in forma zeri e poli.
+    se è un rapporto proprio, provo a moltiplicare/dividere per z, per vedere se emerge lo zero in 0.
+    MA POI RITORNO ALLA FORMA DI PRIMA! sbagliatissimo proseguire su quella strada!
+    Adesso per trovare i coefficienti Ai di ogni polo, lo tolgo da X(z) e la valuto nel polo.

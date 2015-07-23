@@ -1,0 +1,69 @@
+MATLAB 
+
+HOW TO:
+
+Crosscorrelazione:
+
+
+x1=3*mysinc(2*t);
+y1=j.*tri(t+1);
+
+cross_x1y1=zeros(size(t));
+
+for k=1:length(tau)
+      cross_x1y1(k)=myScalarProduct(myshift(y1,-tau(k)/dt),x1,dt);
+end
+
+figure(1); hold on; plot(t,real(cross_x1y1),'b'); plot(t,imag(cross_x1y1),'r--'); hold off; title('Crosscorrelazione tra 3sinc(2t) e j*tri(t+1)','Interpreter','latex','FontSize',20);
+
+
+Autocorrelazione:
+
+
+xp = rect(t-1/2)-rect(t-3/2);
+
+autocorr_xp = zeros(size(tau));
+
+for k = 1:length(tau)
+    autocorr_xp(k) = myScalarProduct(myshift(xp,-tau(k)/dt),xp,dt);
+end
+
+%Stampo l'autocorrelazione
+figure(2); hold on; plot(t,real(autocorr_xp),'b'); plot(t,imag(autocorr_xp),'r--'); hold off; title('Autocorrelazione xp=rect(t-1/2)-rect(t-3/2)','Interpreter','latex','FontSize',20);
+
+
+
+Crosscorrelazioni circolari
+
+
+%L'esercizio 3 richiede di calcolare correlazioni autocircolari, richiede
+%di calcolare l'autocorrelazione di xp1 convoluto con un pettine di impulsi
+%che darà ovviamente un segnale periodico.
+
+xT = zeros(size(t));
+xp1 = rect(t-1/2)-rect(t-3/2);
+T = 2;
+
+%Dalla convoluzione con un pettine d'impulsi ne risulta un segnale
+%periodico!
+%Utilizziamo myshift per crearlo, ovvero lo trasliamo ogni volta di un
+%certo T che è uguale a 2.
+
+for n = floor(min(t)/T):ceil(max(t)/T)
+    xT = xT + myshift(xp1,n*T/dt);
+end
+
+autocorr_xT= zeros(size(t));
+
+%Ora dal segnale ricavato calcoliamo l'autocorrelazioe circolare e introduciamo la funzione
+%mycircshift poichè essendo periodico.
+
+for k = 1:length(t)
+    autocorr_xT(k)= 1/T*integrale(conj(xT).*mycircshift(xT,-tau(k)/dt),dt);
+end
+
+
+
+
+
+
